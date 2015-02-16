@@ -475,15 +475,15 @@
 		// Check if q3 passes
 		if (substrId === 'q3') {
 			if (this.store.q2 === 'legumes' && fieldValue > 20) {
-				this._showMessage('Vous ne pouvez pas ramener une telle quantité de ce bien sur le sol français');
+				this._showMessage('Vous ne pouvez pas ramener plus de 20Kg de fruits et légumes sur le sol français');
 				return;
 			}
 			if (this.store.q2 === 'peche' && fieldValue > 5) {
-				this._showMessage('Vous ne pouvez pas ramener une telle quantité de ce bien sur le sol français');
+				this._showMessage('Vous ne pouvez pas ramener plus de 5Kg de produits de pêches sur le sol français');
 				return;
 			}
 			if (this.store.q2 === 'epices' && fieldValue > 2) {
-				this._showMessage('Vous ne pouvez pas ramener une telle quantité de ce bien sur le sol français');
+				this._showMessage('Vous ne pouvez pas ramener plus de 2Kg d\'épices sur le sol français');
 				return;
 			}
 		}
