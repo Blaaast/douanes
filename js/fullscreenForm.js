@@ -474,15 +474,15 @@
 
 		// Check if q3 passes
 		if (substrId === 'q3') {
-			if (this.store.q2 === 'legumes' && fieldValue > 20000) {
+			if (this.store.q2 === 'legumes' && fieldValue > 20) {
 				this._showMessage('Vous ne pouvez pas ramener une telle quantité de ce bien sur le sol français');
 				return;
 			}
-			if (this.store.q2 === 'peche' && fieldValue > 5000) {
+			if (this.store.q2 === 'peche' && fieldValue > 5) {
 				this._showMessage('Vous ne pouvez pas ramener une telle quantité de ce bien sur le sol français');
 				return;
 			}
-			if (this.store.q2 === 'epices' && fieldValue > 10000) {
+			if (this.store.q2 === 'epices' && fieldValue > 2) {
 				this._showMessage('Vous ne pouvez pas ramener une telle quantité de ce bien sur le sol français');
 				return;
 			}
