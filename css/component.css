@@ -1,3 +1,19 @@
+.icon-alim::after 		{ background-image: url(../img/icons/douanes-agroalim.jpg); }
+.icon-tabac::after 		{ background-image: url(../img/icons/douanes-alcool.jpg); }
+.icon-autres::after 	{ background-image: url(../img/icons/douanes-autres.png); }
+
+.icon-viande::after 	{ background-image: url(../img/icons/douanes-viande.jpg); }
+.icon-lait::after 		{ background-image: url(../img/icons/douanes-laitier.jpg); }
+.icon-legumes::after 	{ background-image: url(../img/icons/douanes-fuiteslegumes.jpg); }
+.icon-peche::after 		{ background-image: url(../img/icons/douanes-poissons.jpg); }
+.icon-epices::after 	{ background-image: url(../img/icons/douanes-epices.jpg); }
+
+.icon-eu::after 			{ background-image: url(../img/icons/douanes-EU.jpg); }
+.icon-non-eu::after 	{ background-image: url(../img/icons/douanes-horsEU.jpg); }
+
+.icon-avion::after 		{ background-image: url(../img/icons/douanes-avionbateau.jpg); }
+.icon-route::after 		{ background-image: url(../img/icons/douanes-route.jpg); }
+
 .hide-it-yo {
 	overflow: hidden;
 }
@@ -427,14 +443,14 @@ button.fs-continue,
 	background-size: 85%;
 	background-repeat: no-repeat;
 	content: '';
-	opacity: 0.5;
+	/*opacity: 0.5;*/
 	-webkit-transition: opacity 0.2s;
 	transition: opacity 0.2s;
 	-webkit-transform: translate(-50%,-50%);
 	transform: translate(-50%,-50%);
 }
 
-.fs-fields .fs-radio-custom label.radio-mobile::after {
+./*fs-fields .fs-radio-custom label.radio-mobile::after {
 	background-image: url(../img/icons/douanes_0.jpeg);
 }
 
@@ -444,7 +460,7 @@ button.fs-continue,
 
 .fs-fields .fs-radio-custom label.radio-conversion::after {
 	background-image: url(../img/icons/douanes_0.jpeg);
-}
+}*/
 
 .fs-fields .fs-radio-custom label:hover::after,
 .fs-fields input[type="radio"]:focus + label::after,
