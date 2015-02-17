@@ -14,6 +14,17 @@
 .icon-avion::after 		{ background-image: url(../img/icons/douanes-avionbateau.jpg); }
 .icon-route::after 		{ background-image: url(../img/icons/douanes-route.jpg); }
 
+#quantityInput {
+	float: left;
+	width: 20%;
+}
+#quantityHint {
+	float: left;
+	width: 80%;
+	font-size: 20px;
+	line-height: 80px;
+}
+
 .hide-it-yo {
 	overflow: hidden;
 }

@@ -471,6 +471,18 @@
 			this._showMessage('Vous ne pouvez pas ramener ce genre de produit sur le sol français');
 			return;
 		}
+		if (substrId === 'q2' && fieldValue === 'legumes') {
+			var quantity = document.getElementById('quantityHint');
+			quantity.innerHTML = '20Kg maximum pour cette catégorie';
+		}
+		if (substrId === 'q2' && fieldValue === 'peche') {
+			var quantity = document.getElementById('quantityHint');
+			quantity.innerHTML = '5Kg maximum pour cette catégorie';
+		}
+		if (substrId === 'q2' && fieldValue === 'epices') {
+			var quantity = document.getElementById('quantityHint');
+			quantity.innerHTML = '2Kg maximum pour cette catégorie';
+		}
 
 		// Check if q3 passes
 		if (substrId === 'q3') {
@@ -522,7 +534,6 @@
 		this.store[substrId] = fieldValue;
 
 		// If no condition are met, move on to the next field
-		console.log('NEXT FIELD');
 		this._nextField();
 	}
 
