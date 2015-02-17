@@ -512,10 +512,10 @@
 				this._showMessage('Vous pouvez rapporter ce produit sans payer aucune taxe.');
 			}
 			if (fieldValue > 430 && fieldValue < 700) {
-				this._showMessage('Vous devez payer entre 0 et 2,5% de frais de douanes + 20% TVA.');
+				this._showMessage('Vous devez payer entre 0 et 2,5% de frais de douanes + 20% TVA. Soit pour XXKg de XX: <ul><li>entre 0 et XX de frais de douanes</li><li>XXXX de TVA</li></ul>');
 			}
 			if (fieldValue > 700) {
-				this._showMessage('Vous devez payer entre 0 et 17% de frais de douanes + 20% TVA');
+				this._showMessage('Vous devez payer entre 0 et 17% de frais de douanes + 20% TVA. Soit pour XXKg de XX: <ul><li>entre 0 et XX de frais de douanes</li><li>XXXX de TVA</li></ul>');
 			}
 			return;
 		}
@@ -524,10 +524,10 @@
 				this._showMessage('Vous pouvez rapporter ce produit sans payer aucune taxe.');
 			}
 			if (fieldValue > 300 && fieldValue < 700) {
-				this._showMessage('Vous devez payer entre 0 et 2,5% de frais de douanes + 20% TVA.');
+				this._showMessage('Vous devez payer entre 0 et 2,5% de frais de douanes + 20% TVA. Soit pour XXKg de XX: <ul><li>entre 0 et XX de frais de douanes</li><li>XXXX de TVA</li></ul>');
 			}
 			if (fieldValue > 700) {
-				this._showMessage('Vous devez payer entre 0 et 17% de frais de douanes + 20% TVA.');
+				this._showMessage('Vous devez payer entre 0 et 17% de frais de douanes + 20% TVA. Soit pour XXKg de XX: <ul><li>entre 0 et XX de frais de douanes</li><li>XXXX de TVA</li></ul>');
 			}
 			return;
 		}
