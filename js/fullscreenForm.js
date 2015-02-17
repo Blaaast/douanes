@@ -474,18 +474,19 @@
 		if (substrId === 'q2' && fieldValue === 'legumes') {
 			var quantity = document.getElementById('quantityHint');
 			quantity.innerHTML = '20Kg maximum pour cette catégorie';
+			this.store.type = 'fruits et légumes';
 		}
 		if (substrId === 'q2' && fieldValue === 'peche') {
 			var quantity = document.getElementById('quantityHint');
 			quantity.innerHTML = '5Kg maximum pour cette catégorie';
+			this.store.type = 'produits de pêche';
 		}
 		if (substrId === 'q2' && fieldValue === 'epices') {
 			var quantity = document.getElementById('quantityHint');
 			quantity.innerHTML = '2Kg maximum pour cette catégorie';
+			this.store.type = 'épices';
 		}
 
-		console.log('FIELD VALUE : ', fieldValue);
-		console.log('substrId : ', substrId);
 		// Check if q3 passes
 		if (substrId === 'q3') {
 			if (this.store.q2 === 'legumes' && fieldValue > 20) {
@@ -500,6 +501,7 @@
 				this._showMessage('Vous ne pouvez pas rapporter plus de 2Kg d\'épices sur le sol français.');
 				return;
 			}
+			this.store.weight = fieldValue;
 		}
 
 		if (substrId === 'q4' && fieldValue === 'eu') {
@@ -512,11 +514,20 @@
 				this._showMessage('Vous pouvez rapporter ce produit sans payer aucune taxe.');
 			}
 			if (fieldValue > 430 && fieldValue < 700) {
-				this._showMessage('Vous devez payer entre 0 et 2,5% de frais de douanes + 20% TVA. Soit pour XXKg de XX: <ul><li>entre 0 et XX de frais de douanes</li><li>XXXX de TVA</li></ul>');
+				this._showMessage('Vous devez payer entre 0 et 2,5% de frais de douanes + 20% TVA. Soit pour ' +
+				                  this.store.weight + 'Kg de ' + this.store.type +
+				                  ': <ul><li>entre 0&euro; et ' + (fieldValue * 0.025) +
+				                  '&euro; de frais de douanes</li><li>' + (fieldValue * 0.20) +
+				                  '&euro; de TVA</li></ul>');
 			}
 			if (fieldValue > 700) {
-				this._showMessage('Vous devez payer entre 0 et 17% de frais de douanes + 20% TVA. Soit pour XXKg de XX: <ul><li>entre 0 et XX de frais de douanes</li><li>XXXX de TVA</li></ul>');
+				this._showMessage('Vous devez payer entre 0 et 17% de frais de douanes + 20% TVA. Soit pour ' +
+				                  this.store.weight + 'Kg de ' + this.store.type +
+				                  ': <ul><li>entre 0&euro; et ' + (fieldValue * 0.17) +
+				                  '&euro; de frais de douanes</li><li>' + (fieldValue * 0.20) +
+				                  '&euro; de TVA</li></ul>');
 			}
+
 			return;
 		}
 		if (substrId === 'q6' && this.store.q5 === 'route') {
@@ -524,10 +535,18 @@
 				this._showMessage('Vous pouvez rapporter ce produit sans payer aucune taxe.');
 			}
 			if (fieldValue > 300 && fieldValue < 700) {
-				this._showMessage('Vous devez payer entre 0 et 2,5% de frais de douanes + 20% TVA. Soit pour XXKg de XX: <ul><li>entre 0 et XX de frais de douanes</li><li>XXXX de TVA</li></ul>');
+				this._showMessage('Vous devez payer entre 0 et 2,5% de frais de douanes + 20% TVA. Soit pour ' +
+				                  this.store.weight + 'Kg de ' + this.store.type +
+				                  ': <ul><li>entre 0&euro; et ' + (fieldValue * 0.025) +
+				                  '&euro; de frais de douanes</li><li>' + (fieldValue * 0.20) +
+				                  '&euro; de TVA</li></ul>');
 			}
 			if (fieldValue > 700) {
-				this._showMessage('Vous devez payer entre 0 et 17% de frais de douanes + 20% TVA. Soit pour XXKg de XX: <ul><li>entre 0 et XX de frais de douanes</li><li>XXXX de TVA</li></ul>');
+				this._showMessage('Vous devez payer entre 0 et 17% de frais de douanes + 20% TVA. Soit pour ' +
+				                  this.store.weight + 'Kg de ' + this.store.type +
+				                  ': <ul><li>entre 0&euro; et ' + (fieldValue * 0.17) +
+				                  '&euro; de frais de douanes</li><li>' + (fieldValue * 0.20) +
+				                  '&euro; de TVA</li></ul>');
 			}
 			return;
 		}
