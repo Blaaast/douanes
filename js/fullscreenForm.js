@@ -468,7 +468,7 @@
 		// Check if the loop is not supposed to stop
 		// This is really heavy...
 		if (substrId === 'q2' && (fieldValue === 'viande' || fieldValue === 'lait')) {
-			this._showMessage('Vous ne pouvez pas ramener ce genre de produit sur le sol français');
+			this._showMessage('Vous ne pouvez pas rapporter ce genre de produit sur le sol français.');
 			return;
 		}
 		if (substrId === 'q2' && fieldValue === 'legumes') {
@@ -484,48 +484,50 @@
 			quantity.innerHTML = '2Kg maximum pour cette catégorie';
 		}
 
+		console.log('FIELD VALUE : ', fieldValue);
+		console.log('substrId : ', substrId);
 		// Check if q3 passes
 		if (substrId === 'q3') {
 			if (this.store.q2 === 'legumes' && fieldValue > 20) {
-				this._showMessage('Vous ne pouvez pas ramener plus de 20Kg de fruits et légumes sur le sol français');
+				this._showMessage('Vous ne pouvez pas rapporter plus de 20Kg de fruits et légumes sur le sol français.');
 				return;
 			}
 			if (this.store.q2 === 'peche' && fieldValue > 5) {
-				this._showMessage('Vous ne pouvez pas ramener plus de 5Kg de produits de pêches sur le sol français');
+				this._showMessage('Vous ne pouvez pas rapporter plus de 5Kg de produits de pêches sur le sol français.');
 				return;
 			}
 			if (this.store.q2 === 'epices' && fieldValue > 2) {
-				this._showMessage('Vous ne pouvez pas ramener plus de 2Kg d\'épices sur le sol français');
+				this._showMessage('Vous ne pouvez pas rapporter plus de 2Kg d\'épices sur le sol français.');
 				return;
 			}
 		}
 
 		if (substrId === 'q4' && fieldValue === 'eu') {
-			this._showMessage('Vous pouvez ramener ce produit sans payer aucune taxe.');
+			this._showMessage('Vous pouvez rapporter ce produit sans payer aucune taxe.');
 			return;
 		}
 
 		if (substrId === 'q6' && this.store.q5 === 'avion') {
 			if (fieldValue < 430) {
-				this._showMessage('Vous pouvez ramener ce produit sans payer aucune taxe.');
+				this._showMessage('Vous pouvez rapporter ce produit sans payer aucune taxe.');
 			}
 			if (fieldValue > 430 && fieldValue < 700) {
-				this._showMessage('Vous devez payer entre 0 et 2,5% de frais de douane + 20% TVA.');
+				this._showMessage('Vous devez payer entre 0 et 2,5% de frais de douanes + 20% TVA.');
 			}
 			if (fieldValue > 700) {
-				this._showMessage('Vous devez payer entre 0 et 17% de frais de douane + 20% TVA');
+				this._showMessage('Vous devez payer entre 0 et 17% de frais de douanes + 20% TVA');
 			}
 			return;
 		}
 		if (substrId === 'q6' && this.store.q5 === 'route') {
 			if (fieldValue < 300) {
-				this._showMessage('Vous pouvez ramener ce produit sans payer aucune taxe.');
+				this._showMessage('Vous pouvez rapporter ce produit sans payer aucune taxe.');
 			}
 			if (fieldValue > 300 && fieldValue < 700) {
-				this._showMessage('Vous devez payer entre 0 et 2,5% de frais de douane + 20% TVA');
+				this._showMessage('Vous devez payer entre 0 et 2,5% de frais de douanes + 20% TVA.');
 			}
 			if (fieldValue > 700) {
-				this._showMessage('Vous devez payer entre 0 et 17% de frais de douane + 20% TVA');
+				this._showMessage('Vous devez payer entre 0 et 17% de frais de douanes + 20% TVA.');
 			}
 			return;
 		}
@@ -543,7 +545,16 @@
 		classie.add( document.getElementById('container'), 'end-of-path' );
 		classie.add( document.body, 'hide-it-yo' );
 
-		document.getElementById('end-modal').innerHTML += '<p class="header">Frais de douane</p><p class="content"> ' + content + '</p><p class="footer clearfix"><a href="index.html" class="btn-retry">Recommencer<a/></p>';
+		document.getElementById('end-modal').innerHTML += '<p class="header">Frais de douanes</p><p class="content"> ' + content + '</p><p class="footer clearfix"><a id="btn-stay" class="btn-stay">Annuler<a/><a href="index.html" class="btn-retry">Recommencer<a/><a id="btn-sav" class="btn-sav">Appel conseiller<a/></p>';
+
+		document.getElementById('btn-stay').addEventListener('click', function() {
+			document.getElementById('end-modal').innerHTML = '';
+			classie.remove( document.getElementById('container'), 'end-of-path' );
+			classie.remove( document.body, 'hide-it-yo' );
+		});
+		document.getElementById('btn-sav').addEventListener('click', function() {
+			document.getElementById('end-modal').innerHTML = '<p>Appel d\'un conseiller en cours...</p>'
+		});
 	}
 
 	// add to global namespace
